@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Audio player</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" type="text/css" href="./styles/fontello.css">
+	<link rel="stylesheet" type="text/css" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/hamburgers/1.1.3/hamburgers.min.css">
+	<link rel="stylesheet" type="text/css" href="./styles/style.css">
+	<link rel="stylesheet" type="text/css" href="./styles/audio.css">
+</head>
+<body>
+<main>
+
+	
+	<h1>Cristian's audio player</h1>
+
+	<img id="music-image" src="">
+
+	<div class="sound-data">
+
+		<h2 class="sound-name"></h2>
+		<h3 class="sound-artist"></h3>
+		<h4 class="sound-year"></h4>
+		<h5 class="sound-duration"></h5>
+	<audio src=""></audio>
+	<i class="icon-volume-on volume"></i><input type="range" class="progress" max="100" value="0">
+		
+	<div class="audio-controls">
+		<span class="previous-song"><span></span></span>
+		<span class="play-song"></span>
+		<span class="next-song"><span></span></span>
+
+	</div>
+
+
+<section class="music-list-container">
+	<input type="text" id="search-song" placeholder="Search music">
+		<button class="hamburger hamburger--elastic" type="button">
+  			<span class="hamburger-box">
+   			<span class="hamburger-inner"></span>
+  			</span>
+		</button>
+	<ul id="music-list">
+		<div id="no-songs" class="filter"><h3>There are not songs</h3></div>
+	</ul>
+
+</section>
+</main>
+<section id="panel">
+	<div class="form-container">
+			<h3 id="action">Add a new song</h3>
+			<form id="insert-music" enctype="multipart/form-data" >
+				<input type="hidden" id="id" name="id" value="">
+
+				<input autocomplete="off" type="text" name="sound-name" placeholder="Name"  >
+				<input autocomplete="off" type="text" name="sound-artist" id="artist" placeholder="Artist *" required>
+				<input autocomplete="off" type="text" name="sound-year" placeholder="Year"  >
+				<br>
+				<br>
+
+				<label for="upload-image">Upload image</label>
+				<input type="file" id="upload-image" accept="image/jpg, image/jpeg, image/png" name="artist-image">
+				<br>
+				<br>
+				<label for="upload-sound">Upload sound *</label> 
+				<input type="file" id="upload-sound" accept="audio/mp3" name="sound">
+				<br>
+				<input type="submit" name="">
+			</form>
+
+
+	</div>
+</section>
+<footer>
+	<a href="https://ve.linkedin.com/in/cristian-d%C3%ADaz-6763091b9" target="_blank">Made by Cristian W.</a>
+</footer>
+<script type="module" src="./script/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+
+
+:root{
+	--audio-btn-bgcolor:  #326fa8;
+}
+[class$=-song]{
+	width: 3em;
+	height: 3em;
+	background-color: var(--audio-btn-bgcolor);
+	border-radius: 50%;
+	display: inline-flex;
+	position: relative;
+  	align-items: center;
+  	justify-content:center; 
+  	margin: 1em;
+
+}
+
+.progress-song{
+	background-color: #2a373c;
+	width: 90%;
+	border-radius: 1.5em;
+	height: 1em;
+	border: 2px solid black;
+}
+.progress{
+	background-color: #6c8c98;
+    height: 1em;
+    width: 85%;
+    margin: auto;
+}
+.play-song:before{
+    content: "";
+    position: absolute;
+    height: 0;
+    width: 0;
+    background-color: transparent;
+    border: 1em solid transparent;
+    border-left: 1.5em solid ;
+    left: .9em;
+}
+.next-song>span,
+.next-song>span:before{ 
+
+    width: 0;
+    height: 0;
+    border: 1em solid transparent;
+    border-left: 1em solid;
+}
+.next-song>span{
+  position:relative;
+  left: .5em;
+}
+.next-song>span:before{
+    content: "";
+    position: absolute;
+    top: -1em;
+    left: -.5em;
+}
+.audio-controls{
+	display: flex; 
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.previous-song>span,
+.previous-song>span:before{ 
+
+    width: 0;
+    height: 0;
+    border: 1em solid transparent;
+    border-right: 1em solid;
+}
+.previous-song>span{
+  position:relative;
+  right: .5em;
+}
+.previous-song>span:before{
+    content: "";
+    position: absolute;
+    top: -1em;
+    right: -.5em;
+}
+
+.volume {
+    position: relative;
+    top: .1em;
+    font-size: 2em;
+}
+.switch{
+    height: 2em;
+    width: 2em;
+    font-size: 1.5em;
+}
