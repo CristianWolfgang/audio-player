@@ -1,12 +1,17 @@
 const d=document;
-export default function hamburgerBtn(update){
-	d.addEventListener("click",e=>{
+export default function hamburgerBtn(){
+	const mediaQuery = matchMedia("(min-width:768px)"),
+	checkMediaQuery= mediaQuery=>{
+		console.log(mediaQuery);
+		if(!mediaQuery.matches){
+			d.body.classList.toggle("no-scroll");
+		}
+	};
+		d.addEventListener("click",e=>{
 		if(e.target.matches(".hamburger") || e.target.matches(".hamburger *")){
 			d.querySelector(".hamburger").classList.toggle("is-active");
 
-			
-			d.body.classList.toggle("no-scroll")
-			
+			checkMediaQuery(mediaQuery);
 			window.scroll(0,0);
 			
 			d.getElementById('panel').classList.toggle("active");

@@ -5,12 +5,12 @@
 }
 	html{
 		font-family: sans-serif;
+		scroll-behavior: smooth;
 	}
 	body{
 		height: 100vh;
 		background-image: radial-gradient(ellipse at bottom, #e66465, #9198e5 );
 		color: white;
-		/*display: flex;*/
 		background-attachment: fixed;
 	}
 	h1{
@@ -46,9 +46,6 @@
     	display: inline-block;
     	margin-left: -1.5em;
 	}
-	#music-image{
-		width: 50%;
-	}
 	audio{
 		display: inline;
 		width: 100%;
@@ -57,7 +54,8 @@
 		float: left;
 		border-radius: 10%;
 		height: 10em;
-
+		width: 50%;
+		margin-left:2%;
 	}
 	.sound-data{
 		text-align: center;
@@ -110,7 +108,7 @@
 	display: none;
 }
 #panel{
-	position: absolute;
+	position: fixed;
 	left: 0;
 	top: 0;
 	bottom: 0;
@@ -122,7 +120,6 @@
 }
 #panel.active{
 	z-index: 1;
-	transform: translate(0,0);
 	opacity: 1;
 }
 
@@ -178,6 +175,8 @@
     bottom: 0;
     background-color: #b92f88f5;
 	z-index:10;
+	display: flex;
+	justify-content: center;
 }
 
 .filter{
@@ -186,4 +185,126 @@
 
 #no-songs{
 	margin-left: -2.5em;
+}
+.attributions,
+.attributions a{
+	color: wheat;
+	text-align: center;
+}
+
+@media only screen and (min-width: 375px) {
+	body{
+		width: 80vw;
+		margin: 0 auto;
+	}
+	footer{
+		font-size: 130%;
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	body{
+		width: 50vw;
+	}
+	#panel{
+		width: 40%;
+		
+	}
+}
+
+@media only screen and (min-width: 1024px) {
+	h1{
+		letter-spacing: .04em;
+		font-size: 200%;
+	}
+	body{
+		width: 40vw;
+	}
+	
+	footer{
+		font-size: 150%;
+	}
+	#panel{
+		font-size: 125%;
+	}
+	#insert-music input,
+	#insert-music label{
+		height: 1.8em;
+	}
+}
+@media only screen and (min-width: 1440px) {
+	h1,	
+	footer{
+		font-size: 300%;
+	}
+	body{
+		margin-top:5vh;
+		width: 60vw;
+	}
+	#music-image{
+		height: 18em;
+	}
+	.sound-data{
+		font-size:1.8em;
+	}
+	body{
+		width: 50wv;
+	}
+
+	#panel{
+		
+		font-size: 165%;
+	}
+	.hamburger--elastic .hamburger-inner:before{
+		top:20px;
+	}
+	.hamburger--elastic .hamburger-inner:after{
+		top:40px;
+	}
+	.hamburger--elastic.is-active .hamburger-inner:after {
+		transform: translate3d(0,-40px,0) rotate(-270deg);
+	}
+	.hamburger{
+		width: 3em;
+		height: 3em;
+	}
+	#insert-music input,
+	#insert-music label{
+		height: 2em;
+	}
+}
+@media only screen and (min-width: 2560px) {
+	h1,
+	footer{
+		font-size: 400%;
+	}
+	body{
+		width: 40vw;
+	}
+	#music-image{
+		height: 28em;
+	}
+	.sound-data{
+		font-size: 3em;
+	}
+	.hamburger--elastic .hamburger-inner:before{
+		top:30px;
+	}
+	.hamburger--elastic .hamburger-inner:after{
+		top:60px;
+	}
+	.hamburger--elastic.is-active .hamburger-inner:after {
+		transform: translate3d(0,-60px,0) rotate(-270deg);	
+	}
+	.hamburger{
+		width: 3.5em;
+		height: 3.5em;
+	}
+	#panel{
+		font-size:300%
+	}
+	#insert-music input,
+	#insert-music label{
+		height: 2.2em;
+	}
 }

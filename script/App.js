@@ -15,16 +15,17 @@ import musicList from "./modules/music-list.js";
 import selectSong from "./modules/select-song.js";
 import nextSong from "./modules/next-song.js";
 import searchMusic from "./modules/search-music.js";
-
+import removeNoScrollClass from "./modules/remove-no-scroll-class.js";
 
 const d=document;
 
 export default function App() {
 	const loader= d.createElement("div");
 	loader.classList.add("loading");
-	loader.innerHTML=`<img src="images/audio.svg" style="margin: 45%;">`;
+	loader.innerHTML=`<img src="images/audio.svg" style="width:33%;">`;
 	d.body.classList.add("no-scroll");
 	d.body.appendChild(loader);
+	removeNoScrollClass();
 	ajax(endpoints.GET,{}, async (data)=>{
 
 	const audio        = await d.querySelector("audio"),
@@ -44,8 +45,7 @@ export default function App() {
 	window.currentSong      = 0;	
 	setTimeout(()=>progress.value=0,100);
 	
-	const noArtistImage = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAMAAACahl6sAAAABlBMVEXJycmcnJyshIZ4AAAB7ElEQVR4nO3bUW7DMAwEUfv+ly4SGEXQ2kksk1xqPXMCvj8BIpeFiIiIiIiIiIiIiIiIiKio9TX1MIOt+6nHOtcBYjbMB8YklC8UM1i+ZjSnnHL0lZxkdKUMMFpSBh3tJMOOXpILjFaUi442ksuOJpIARwtJiKOBJMihl7hAwhxiSaBDKgl1KCUukGCHThIOEUniHRpIgkMjcYGkOBQSIM0kWQ4g3RzVEiBApnPUSoAAAaJzVEqAAAECBAgQIECAzCopdAABAkQoKXUAATKfpNjhA7H5Q+RXtx3EZvPBB2KzHeSzr+WzQWez0+gDsdn79dnE9tmN94HY3I/4XPT43Fj5XL353CEuNpehi8+trs/19GJzz74MSNQDH2fCeGTCeGTCeOah2LJA/OZgICIioq35nygOr9+Phhk0JxCNMQOKhpZhRS/LRUYTSoCigyWMoaWEMnSUcIaGksIQUNIcRjvlhZRkR5UknVFEKXHkS4oY6ZRCR6qk1JEoKXakScodSRKBI0MiYSRQZI5gidARK3GBSB2BErEjTKJmrEESNeKZiyNCohZsuTguS9TjvwSkmeOSRD36n4CoB//X3SHqsXe6N0Q99G53hqhHPghIt1wc5yXqeQ+7K0Q97puAdOueEPWwbwPSLSDd2p34B3GsN/j6gvMWAAAAAElFTkSuQmCC";
-
+	const noArtistImage = "./images/blank-profile-picture-g8a1c040e5_640.png";
 	if(data.statusText !="Success"){
 		d.querySelector("ul").innerHTML=`<h2 style="margin-left: -2em;">${data.statusText}</h2>`
 		d.getElementById("search-song").disabled=true;
