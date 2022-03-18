@@ -87,10 +87,6 @@
 .volume {
     position: relative;
     top: .1em;
+    cursor:pointer;
     font-size: 2em;
-}
-.switch{
-    height: 2em;
-    width: 2em;
-    font-size: 1.5em;
 }

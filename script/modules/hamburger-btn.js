@@ -2,9 +2,9 @@ const d=document;
 export default function hamburgerBtn(){
 	const mediaQuery = matchMedia("(min-width:768px)"),
 	checkMediaQuery= mediaQuery=>{
-		console.log(mediaQuery);
 		if(!mediaQuery.matches){
 			d.body.classList.toggle("no-scroll");
+			window.scroll(0,0);
 		}
 	};
 		d.addEventListener("click",e=>{
@@ -12,7 +12,6 @@ export default function hamburgerBtn(){
 			d.querySelector(".hamburger").classList.toggle("is-active");
 
 			checkMediaQuery(mediaQuery);
-			window.scroll(0,0);
 			
 			d.getElementById('panel').classList.toggle("active");
 			

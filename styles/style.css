@@ -83,6 +83,8 @@
     margin-bottom: 1em;
     width: 75%;
     margin-left: -2em;
+    height: 2em;
+    padding-left: 0.5em;
 }
 
 .hamburger{
@@ -160,10 +162,11 @@
 
 .icon-trash,.icon-cog{
     position: absolute;
-    left: 11em;
+    top:.2em;
+	right: .2em;
 }
 .icon-cog{
-	left:12.5em;
+	right: 2em;
 }
 
 .loading{
@@ -188,7 +191,7 @@
 }
 .attributions,
 .attributions a{
-	color: wheat;
+	color: wheat;	
 	text-align: center;
 }
 
@@ -272,6 +275,9 @@
 	#insert-music label{
 		height: 2em;
 	}
+	.song{
+		margin-left:1em;
+	}
 }
 @media only screen and (min-width: 2560px) {
 	h1,
@@ -306,5 +312,8 @@
 	#insert-music input,
 	#insert-music label{
 		height: 2.2em;
+	}
+	#search-song{
+		margin-left:.1em;
 	}
 }
