@@ -5,7 +5,8 @@ export default function upload(labelImg,labelSound){
 	
 
 	let songNameWithFormat,
-	songName; 
+	songName,
+	mySongName;
 	d.addEventListener("change",e=>{
 		if(e.target.matches("#upload-image")){
 			const imgSrc= URL.createObjectURL(e.target.files[0]);
@@ -15,8 +16,8 @@ export default function upload(labelImg,labelSound){
 			songNameWithFormat=e.target.files[0].name;
 			labelSound.innerHTML=songNameWithFormat;
 			songName = songNameWithFormat.slice(0,songNameWithFormat.lastIndexOf("."));
-
-			d.querySelector("[name=sound-name]").value=songName;
+			mySongName= d.querySelector("[name=sound-name]").value;
+			if(!mySongName)d.querySelector("[name=sound-name]").value=songName;
 		}
 	});
 
