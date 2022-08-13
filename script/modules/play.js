@@ -9,5 +9,5 @@ export default function playHandler(play,audio){
 			}
 			play=!play
 		}
-	})
+	});
 }

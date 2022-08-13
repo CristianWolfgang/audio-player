@@ -13,7 +13,9 @@
 </head>
 
 <body>
-	
+	<div id="loader-container">
+		<img src="./images/audio.svg" alt="" style="width: 33%;">
+	</div>
 <h1>Cristian's audio player</h1>
 <main>
 
@@ -27,7 +29,7 @@
 		<h3 class="sound-artist"></h3>
 		<h4 class="sound-year"></h4>
 		<h5 class="sound-duration"></h5>
-	<audio src=""></audio>
+	<audio src="" preload="metadata"></audio>
 	<i class="icon-volume-on volume"></i><input type="range" class="progress" max="100" value="0">
 		
 	<div class="audio-controls">
@@ -62,19 +64,18 @@
 				<input autocomplete="off" type="text" name="sound-year" placeholder="Year"  >
 				<br>
 				<br>
-
-				<label for="upload-image">Upload image</label>
-				<input type="file" id="upload-image" accept="image/jpg, image/jpeg, image/png" name="artist-image">
-				<br>
-				<br>
-				<label for="upload-sound">Upload sound *</label> 
-				<input type="file" id="upload-sound" accept="audio/mp3" name="sound">
+				<div class="file-container">
+					<label for="upload-image">Upload image</label>
+					<input type="file" id="upload-image" accept="image/jpg, image/jpeg, image/png" name="artist-image">
+					<br>
+					<br>
+					<label for="upload-sound">Upload sound *</label> 
+					<input type="file" id="upload-sound" accept="audio/mp3" name="sound">
+				</div>
 				<br>
 				<input type="submit" name="">
 			</form>
 	</div>
-	<br><br><br><br>
-	<br><br><br><br>
 	<div class="attributions">
 		<h3>Icons by Fontello.</h3>
 		No image artist by <a href="https://pixabay.com/users/wanderercreative-855399/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=973460">Stephanie Edwards</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=973460">Pixabay</a>

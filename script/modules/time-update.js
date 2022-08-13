@@ -8,10 +8,10 @@ export default function timeUpdate(audio,changingTimeSong,soundTime,progress){
   			audio.currentTime = (progress.value*audio.duration)/100;
 
 		}
-	})
-	audio.ontimeupdate=e=>{
+	});
+	audio.addEventListener("timeupdate",e=>{
 		if(changingTimeSong===false)progress.value=Math.floor((audio.currentTime*100)/audio.duration);
-		if(!window.changinMusic)soundTime.innerHTML=` ${calculateTime(audio.currentTime)}/${calculateTime(audio.duration)}`
+		if(!window.changingMusic)soundTime.innerHTML=` ${calculateTime(audio.currentTime)}/${calculateTime(audio.duration)}`
 		changingTimeSong=false;
-	}
+	});
 }

@@ -9,19 +9,10 @@
 	background-color: var(--audio-btn-bgcolor);
 	border-radius: 50%;
 	display: inline-flex;
-	position: relative;
   	align-items: center;
   	justify-content:center; 
   	margin: 1em;
-    cursor: pointer;
-}
-
-.progress-song{
-	background-color: #2a373c;
-	width: 90%;
-	border-radius: 1.5em;
-	height: 1em;
-	border: 2px solid black;
+         
 }
 .progress{
 	background-color: #6c8c98;
@@ -29,6 +20,14 @@
     width: 85%;
     margin: auto;
 }
+.progress,
+[class$="-song"]{
+    cursor: pointer;
+    position:relative;
+    
+    z-index: var(--z-index-3);
+}
+
 .play-song:before{
     content: "";
     position: absolute;
@@ -62,8 +61,6 @@
     align-items: center;
     justify-content: center;
 }
-
-
 
 .previous-song>span,
 .previous-song>span:before{ 

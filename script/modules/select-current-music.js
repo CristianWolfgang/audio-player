@@ -4,8 +4,6 @@ soundName          = d.querySelector(".sound-name"),
 soundArtist        = d.querySelector(".sound-artist"),
 soundYear          = d.querySelector(".sound-year"),
 soundImage         = d.getElementById("music-image"),
-soundTime          = d.querySelector(".sound-duration"),
-
 progress           = d.querySelector(".progress"),
 audio        = d.querySelector("audio");
 
@@ -13,7 +11,7 @@ audio        = d.querySelector("audio");
         progress.disabled=true;
         progress.value=0;
 
-        window.changinMusic=true;
+        window.changingMusic=true;
         const name = songObj.name,
         artist = songObj.artist;
             
@@ -35,9 +33,9 @@ audio        = d.querySelector("audio");
         soundImage.src=songObj.image||noArtistImage;
 
 
-        audio.src= songObj.audio,100
+        audio.src= songObj.audio;
 
         audio.play();
-        setTimeout(()=>window.changinMusic=false,100);
+        setTimeout(()=>window.changingMusic=false,100);
         setTimeout(()=>progress.disabled=false,1000);
     }
