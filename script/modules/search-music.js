@@ -25,6 +25,8 @@ export default function searchMusic(selector){
                 
                (!notSongs)? d.getElementById("no-songs").classList.remove("filter"):d.getElementById("no-songs").classList.add("filter")            
 
+            }else{
+                list.forEach(el=>el.classList.remove("filter"));
             }
         }
     });
