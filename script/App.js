@@ -40,7 +40,8 @@ export default function App() {
     window.currentSong = 0;
     setTimeout(() => (progress.value = 0), 100);
 
-    const noArtistImage = "./images/blank-profile-picture-g8a1c040e5_640.png";
+    const noArtistImage = "./images/no-img.png";
+
     if (data.statusText != "Success") {
       d.querySelector(
         "ul"
@@ -51,7 +52,7 @@ export default function App() {
       soundYear.textContent = "n/a";
       audio.src = "";
       soundImage.src = noArtistImage;
-      soundTime.innerHTML = "0:00/0:00";
+      setTimeout(()=>soundTime.innerHTML = "0:00/0:00",900);
     } else {
       previusBtn(songArr);
       nextBtn(songArr);
